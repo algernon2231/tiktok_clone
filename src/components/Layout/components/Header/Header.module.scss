@@ -26,8 +26,10 @@
      .logo{
 
      }
-     .search{
+     .search, .search-result { 
           width: 361px;
+     }
+     .search{
           height: var(--search-height);
           display: flex;
           background-color: rgba(255, 255, 255, 1);
@@ -61,6 +63,12 @@
           &:focus-within {
                 border-color: rgba(22, 24, 35, .2);
           }
+     }
+     .search-title {
+          padding: 5px 12px;
+           font-size: 1.4rem;
+           color: rgba(22,24,35,0.5);
+           font-weight: 600;
      }
      .clear,.loading{
           position: absolute;
