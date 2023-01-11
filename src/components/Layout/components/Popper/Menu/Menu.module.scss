@@ -1,0 +1,39 @@
+.content {
+    min-width: 224px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0px;
+    list-style: none;
+}
+.menu-item {
+    width: 100%;
+    justify-content: flex-start;
+    line-height: 1.8rem;
+     &:hover {
+          background-color:rgba(22,24,35,0.03);         
+     }
+}
+    .header {
+        position: relative;
+        height: 50px;
+        margin-top: -8px;
+    }
+    .back-btn  {
+       width:50px;
+       height:100%;
+       background-color: transparent;
+       cursor: pointer;
+    }
+    .header-title {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .menu-item {
+         line-height: 2;
+    }
+    .subMenu-item{
+        font-weight: 10;
+    }

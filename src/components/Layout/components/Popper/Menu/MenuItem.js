@@ -4,9 +4,12 @@ import classNames from 'classnames/bind'
 import styles from './Menu.module.scss'
 const cx = classNames.bind(styles);
 
-const MenuItem = ({ data }) => {
+const MenuItem = ({ data, onClick   }) => {
+  let classes = cx('menu-item', {
+    'subMenu-item': data.code
+  })
   return (
-    <Button className={cx('menu-item')} leftIcon={ data.icon } to = { data.to }>{ data.title }</Button>
+    <Button className={ classes } leftIcon={data.icon} to={data.to} onClick = { onClick }>{data.title}</Button>
   )
 }
 
