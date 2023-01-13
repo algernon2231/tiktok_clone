@@ -9,7 +9,10 @@
 .menu-item {
     width: 100%;
     justify-content: flex-start;
+    border-radius: 0;
+    padding: 11px 16px;
     line-height: 1.8rem;
+
      &:hover {
           background-color:rgba(22,24,35,0.03);         
      }
@@ -36,4 +39,7 @@
     }
     .subMenu-item{
         font-weight: 10;
+    }
+    .seperate {  
+        border-top: 2px solid rgba(22, 24, 35, 0.12);
     }

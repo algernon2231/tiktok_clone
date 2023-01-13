@@ -18,7 +18,7 @@ const Menu = ({ children,  items = [], onChange = defaultFn }) => {
     const current = history[history.length - 1];
 
     const renderItems = () => {
-         return  current.data.map( (item,index) =>{
+         return   current && current.data.map( (item,index) =>{
              return <MenuItem key ={ index }  data= { item } onClick= { () =>  {
                  if( !!item.children) {
                         setHistory( prev => [...prev,item.children])
@@ -32,6 +32,7 @@ const Menu = ({ children,  items = [], onChange = defaultFn }) => {
       <Tippy
           interactive= { true }
           delay= {[0,700]}
+          offset = {[12,8]}
         //  visible
         //   animation = { false }
           placement='bottom-end'
@@ -43,6 +44,7 @@ const Menu = ({ children,  items = [], onChange = defaultFn }) => {
                   </PopperWrapper>
               </div>
           )}
+           onHide={() => setHistory(prev => prev.slice(0,1))}
       >
          { children }
       </Tippy>
