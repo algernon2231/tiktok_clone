@@ -23,86 +23,6 @@
 
 }
 
-.wrapper {}
-
-.logo {}
-
-.search,
-.search-result {
-     width: 361px;
-}
-
-.search {
-     height: var(--search-height);
-     display: flex;
-     background-color: rgba(255, 255, 255, 1);
-     border-radius: var(--search-border-radius);
-     padding-left: 16px;
-     border: 1.5px solid transparent;
-     position: relative;
-
-     input {
-          flex: 1;
-          height: 100%;
-          color: var(--black);
-          font-size: 1.6rem;
-          background-color: transparent;
-          caret-color: var(--primary);
-     }
-
-     input:not(:placeholder-shown)~.search-btn {
-          color: rgba(22, 24, 35, 0.75);
-     }
-
-     &::after {
-          content: '';
-          position: absolute;
-          top: var(--search-top-spacer);
-          right: var(--search-btn-width);
-          width: 1px;
-          height: calc(var(--search-height) - var(--search-top-spacer) * 2);
-          background-color: rgba(22, 24, 35, 0.12);
-     }
-
-     &:focus-within {
-          border-color: rgba(22, 24, 35, .2);
-     }
-}
-
-.search-title {
-     padding: 5px 12px;
-     font-size: 1.4rem;
-     color: rgba(22, 24, 35, 0.5);
-     font-weight: 600;
-}
-
-.clear,
-.loading {
-     position: absolute;
-     right: calc(var(--search-btn-width) + 16px);
-     top: 50%;
-     transform: translateY(-50%);
-     color: rgba(22, 24, 35, 0.34);
-}
-
-.search-btn {
-     width: var(--search-btn-width);
-     height: 100%;
-     border-top-right-radius: var(--search-border-radius);
-     border-bottom-right-radius: var(--search-border-radius);
-     font-size: 1.8rem;
-     color: rgba(22, 24, 35, 0.34);
-
-     &:hover {
-          background-color: rgba(22, 24, 35, 0.03);
-          cursor: pointer;
-     }
-
-     &:active {
-          background-color: rgba(22, 24, 35, 0.06);
-     }
-}
-
 .more-btn {
      font-size: 2rem;
      margin-left: 20px;
@@ -112,10 +32,11 @@
 }
 
 .actions {
-     
+
      display: flex;
      align-items: center;
      justify-items: center;
+
 }
 
 .action-btn {
@@ -133,4 +54,39 @@
      margin-left: 20px;
      border-radius: 50%;
      cursor: pointer;
+}
+
+.icon_upload {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 110px;
+     padding: 0 16px;
+     height: 36px;
+     border: 1px solid rgba(22, 24, 35, 0.12);
+     border-radius: 2px;
+     background: rgba(255, 255, 255, 1);
+
+     &:hover {
+          background-color: rgba(22, 24, 35, .03);
+     }
+}
+
+.title_icon {
+     font-style: normal;
+     font-weight: 600;
+     font-size: 16px;
+     line-height: 24px;
+     color: rgba(22, 24, 35, 1);
+}
+.plus_icon {
+     margin-right: 8px;
+     color: rgba(22, 24, 35, 1);
+}
+.message_icon {
+     color: rgba(22, 24, 35, 1);
+}
+.tinnhan_icon {
+      color: rgba(22, 24, 35, 1);
+    
 }
