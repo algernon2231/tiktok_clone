@@ -39,6 +39,7 @@
 
 }
 
+
 .action-btn {
      font-size: 2.3rem;
      background-color: transparent;
@@ -79,14 +80,21 @@
      line-height: 24px;
      color: rgba(22, 24, 35, 1);
 }
+
 .plus_icon {
      margin-right: 8px;
      color: rgba(22, 24, 35, 1);
 }
+
 .message_icon {
      color: rgba(22, 24, 35, 1);
 }
+
 .tinnhan_icon {
-      color: rgba(22, 24, 35, 1);
-    
+     color: rgba(22, 24, 35, 1);
+
+}
+
+.logo-link {
+     display: flex;
 }

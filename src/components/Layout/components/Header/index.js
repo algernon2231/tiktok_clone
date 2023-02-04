@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
 import images from '../../../../assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faEllipsisVertical, faEarthAsia, faCircleQuestion, faKeyboard, faUser, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisVertical, faEarthAsia, faCircleQuestion, faKeyboard, faUser, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons'
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -12,6 +12,8 @@ import Menu from '../Popper/Menu';
 import { MessageIcon, PlusIcon, TinnhanIcon } from '../../../Icons';
 import Image from '../../../Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
+import routesConfig from '../../../../config/routes';
 
 const MENU_ITEMS = [
   {
@@ -60,38 +62,40 @@ const Header = () => {
       to: '/feedback',
       seperate: true
     }
-    
-    
+
+
   ]
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <img src={images.logo} alt="TiktokLogo" />
+          <Link to={routesConfig.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="TiktokLogo" />
+          </Link>
         </div>
-          
-          {/* Search */}
 
-          <Search/>
+        {/* Search */}
+
+        <Search />
 
         <div className={cx('actions')}>
           {currentUser ? (
             <>
-             
-                <button className={cx('action-btn','icon_upload')}>
-                     <PlusIcon  className= { cx('plus_icon')} width="20" height='20' />
-                     <span className= { cx('title_icon')}>Tải lên</span>
-                </button>
 
-              <Tippy offset={[16,12]} delay={[0, 200]} content='Tin nhắn'>
+              <button className={cx('action-btn', 'icon_upload')}>
+                <PlusIcon className={cx('plus_icon')} width="20" height='20' />
+                <span className={cx('title_icon')}>Tải lên</span>
+              </button>
+
+              <Tippy offset={[16, 12]} delay={[0, 200]} content='Tin nhắn'>
                 <button className={cx('action-btn', 'tinnhan_icon')}>
                   <TinnhanIcon />
                 </button>
               </Tippy>
 
-              <Tippy offset={[16,12]} delay={[0, 200]} content='Hộp thư'>
+              <Tippy offset={[16, 12]} delay={[0, 200]} content='Hộp thư'>
                 <button className={cx('action-btn', 'message_icon')}>
-                  <MessageIcon/>
+                  <MessageIcon />
                 </button>
               </Tippy>
             </>
@@ -101,12 +105,12 @@ const Header = () => {
               <Button primary >Log in</Button>
             </>
           )}
-          <Menu items= { currentUser ? userMenu : MENU_ITEMS } onChange={handleOnChange} >
+          <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleOnChange} >
             {currentUser ? (
               <Image
-                 src='https://icdn.24h.com.vn/upload/1-2023/images/2023-01-04/Ve-dep-dien-dao-chung-sinh-cua-co-gai-sinh-nam-1999-lot-top-guong-mat-dep-nhat-the-gioi-57068584_2351143488502839_871658938696715268_n-1672812988-819-width1080height1080.jpg' 
+                src='https://icdn.24h.com.vn/upload/1-2023/images/2023-01-04/Ve-dep-dien-dao-chung-sinh-cua-co-gai-sinh-nam-1999-lot-top-guong-mat-dep-nhat-the-gioi-57068584_2351143488502839_871658938696715268_n-1672812988-819-width1080height1080.jpg'
                 className={cx('user-avatar')}
-                 alt="user-avatar"
+                alt="user-avatar"
               />
             ) : (
               <button className={cx('more-btn')}>
